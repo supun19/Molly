@@ -135,6 +135,7 @@
                     android:layout_height="match_parent"
                     android:text="PAY NOW"
                     android:background="@color/green"
+                    android:id="@+id/button_pay_now"
                     />
             </LinearLayout>
         </LinearLayout>

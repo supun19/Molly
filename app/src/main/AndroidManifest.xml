@@ -28,7 +28,8 @@
             android:name=".cartActivity"
             android:label="@string/title_activity_cart"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".OrderConfirmation"></activity>
+        <activity android:name=".OrderConfirmation" />
+        <activity android:name=".QrActivity"></activity>
     </application>
 
 </manifest>
