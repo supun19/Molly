@@ -44,10 +44,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Black and White Long Top"
-                android:textSize="20dp"
+                android:text="Black \u0026 White Long Top"
+                android:textSize="15dp"
                 android:textColor="@color/black"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="10dp"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -73,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal"
+                android:layout_marginTop="20dp"
                 >
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -90,35 +91,26 @@
                 </RelativeLayout>
                 <include layout="@layout/up_and_down_spinner" />
 
-                <!--RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    >
-
-
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/spinner_quentity">
-
-
-                    </Spinner>
-                </RelativeLayout-->
             </LinearLayout>
 
 
             </LinearLayout>
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add To Card"
-            android:background="@color/colorPrimary"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textColor="@color/white"/>
+            android:gravity="center">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add To Card"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
