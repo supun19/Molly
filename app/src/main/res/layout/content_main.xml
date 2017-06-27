@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Black and White Long Top"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:textColor="@color/black"
                 android:layout_marginTop="40dp"
                 />
@@ -71,12 +71,12 @@
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:orientation="horizontal"
                 >
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:gravity="center"
                     >
@@ -88,7 +88,9 @@
 
                     </Spinner>
                 </RelativeLayout>
-                <RelativeLayout
+                <include layout="@layout/up_and_down_spinner" />
+
+                <!--RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
                     android:background="@drawable/border"
@@ -103,7 +105,7 @@
 
 
                     </Spinner>
-                </RelativeLayout>
+                </RelativeLayout-->
             </LinearLayout>
 
 
@@ -126,7 +128,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        app:srcCompat="@android:drawable/ic_dialog_email"
+        app:backgroundTint="@color/white"
+        app:srcCompat="@drawable/wishlistheart"
         app:layout_anchor="@id/viewA"
         app:layout_anchorGravity="bottom|right|end"/>
 

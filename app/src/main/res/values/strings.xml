@@ -19,5 +19,6 @@
     <string name="title_activity_main">MainActivity</string>
 
     <string name="add_to_card">Card</string>
+    <string name="title_activity_cart">cart</string>
 
 </resources>

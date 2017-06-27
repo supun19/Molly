@@ -1,12 +1,16 @@
 package com.example.supun.molly;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,10 +19,12 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener{
 
+    private TextView quentityView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
 
         // get Spinner reference
-        Spinner spinner_quentity = (Spinner) findViewById(R.id.spinner_quentity);
+       /* Spinner spinner_quentity = (Spinner) findViewById(R.id.spinner_quentity);
 
         // Spinner click listener
         spinner_quentity.setOnItemSelectedListener(this);
@@ -81,9 +87,58 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         dataAdapterQuentity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // attaching data adapter to spinner
-        spinner_quentity.setAdapter(dataAdapterQuentity);
+        spinner_quentity.setAdapter(dataAdapterQuentity);*/
+//up spinner
+        Spinner upSpinner = (Spinner) findViewById(R.id.spinner_up_icon);
+        upSpinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    //Your code
+                    increaseQuentity();
+                }
+                return false;
+            }
+        });
+
+        quentityView = (TextView) findViewById(R.id.countView);
 
 
+       //down spinner
+        Spinner downSpinner = (Spinner) findViewById(R.id.spinner_down_icon);
+        downSpinner.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    //Your code
+                    decreaseQuentity();
+                }
+                return false;
+            }
+        });
+
+
+
+    }
+
+
+    public void increaseQuentity(){
+        String countText =  quentityView.getText().toString();
+        int count = Integer.parseInt(countText);
+        ++count;
+        Log.d("count value",countText);
+        quentityView.setText(count+"");
+
+    }
+    public void decreaseQuentity(){
+        String countText =  quentityView.getText().toString();
+        int count = Integer.parseInt(countText);
+        if(count>0){
+            --count;
+        }
+
+        Log.d("count value",countText);
+        quentityView.setText(count+"");
 
     }
 
@@ -106,5 +161,27 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.app_bar, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+
+            case R.id.action_cart:
+                // User chose the "Favorite" action, mark the current item
+                // as a favorite...
+                Intent intent = new Intent(this,cartActivity.class);
+                startActivity(intent);
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }
