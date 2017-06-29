@@ -107,7 +107,8 @@
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:id="@+id/button_add_to_card"/>
 
         </LinearLayout>
 

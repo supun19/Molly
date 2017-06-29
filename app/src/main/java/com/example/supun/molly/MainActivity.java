@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -118,7 +119,14 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         });
 
 
-
+        Button buttonAddToCard = (Button) findViewById(R.id.button_add_to_card);
+        buttonAddToCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,cartActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

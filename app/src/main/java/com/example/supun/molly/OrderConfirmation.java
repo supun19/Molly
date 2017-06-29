@@ -10,6 +10,12 @@ import android.widget.RadioButton;
 
 import com.example.supun.molly.Adapter.CartAdapter;
 import com.example.supun.molly.Model.Item;
+import com.example.supun.molly.Model.PaymentModel;
+import com.example.supun.molly.Model.QrModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -41,8 +47,48 @@ public class OrderConfirmation extends AppCompatActivity {
         });
     }
     private void payNow(){
-        Intent intent = new Intent(this,QrActivity.class);
-        startActivity(intent);
+
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.example.buddhikajay.mobilepay");
+        if (launchIntent != null) {
+            //null pointer check in case package name was not found
+            QrModel model = new QrModel();
+            model.setAmount("LKR2090.00");
+            model.setId("1549f642-3a50-49a0-8f57-31b2ab94841e");
+            model.setTag("main");
+            model.setHaveCustomTypes(false);
+            PaymentModel paymentModel = new PaymentModel();
+            paymentModel.setTip(false);
+            paymentModel.setDynamic(false);
+            paymentModel.addQrModel(model);
+            paymentModel.setInnerApp(true);
+
+
+           // bundle.putSerializable("Paymodel",paymentModel);
+            //launchIntent.("Paymodel",paymentModel);
+            launchIntent.putExtra("Paymodel",paymentModel.toString());
+           /* JSONObject paymodel = new JSONObject();
+            try {
+                paymodel.put("tip",false);
+                paymodel.put("dynamic",false);
+                paymodel.put("innerApp",true);
+                JSONObject model = new JSONObject();
+                model.put("amount","LKR 2090.00");
+                model.put("merchantId","1549f642-3a50-49a0-8f57-31b2ab94841e");
+                model.put("tag","main");
+                JSONArray models = new JSONArray();
+                models.put(model);
+                paymodel.put("qrModels",models);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }*/
+
+            //launchIntent.putExtra("paymodel",paymentModel.toString());
+            startActivity(launchIntent);
+
+        }
+        //Intent intent = new Intent(this,QrActivity.class);
+        //startActivity(intent);
 
     }
 
