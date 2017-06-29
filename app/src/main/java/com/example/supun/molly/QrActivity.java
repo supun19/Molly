@@ -22,7 +22,7 @@ public class QrActivity extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            Bitmap myBitmap = QRCode.from("2090").withSize(400,400).bitmap();
+            Bitmap myBitmap = QRCode.from("LKR 2090.00").withSize(400,400).bitmap();
             ImageView myImage = (ImageView) findViewById(R.id.imageView2);
             myImage.setImageBitmap(myBitmap);
         }
