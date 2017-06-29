@@ -28,7 +28,9 @@
         <activity
             android:name=".cartActivity"
             android:label="@string/title_activity_cart" />
-        <activity android:name=".OrderConfirmation" />
+        <activity android:name=".OrderConfirmation"
+            android:label="@string/title_activity_orderconfirmation"
+            />
         <activity android:name=".QrActivity"></activity>
     </application>
 

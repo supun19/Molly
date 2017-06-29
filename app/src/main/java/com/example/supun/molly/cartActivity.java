@@ -28,7 +28,7 @@ public class cartActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+        toolbar.setNavigationIcon(R.drawable.ic_closs);
 
         // Construct the data source
         ArrayList<Item> items = new ArrayList<Item>();

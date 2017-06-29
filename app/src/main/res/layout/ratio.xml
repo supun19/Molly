@@ -7,15 +7,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DirectPay App"
-        android:onClick="onRadioButtonClicked"/>
+        android:onClick="onRadioButtonClicked"
+        android:textColor="@color/base_tabpager_indicator_color"/>
     <RadioButton android:id="@+id/radio_visa_master"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Visa / Master"
-        android:onClick="onRadioButtonClicked"/>
+        android:onClick="onRadioButtonClicked"
+        android:textColor="@color/base_tabpager_indicator_color"/>
     <RadioButton android:id="@+id/radio_bank_transfer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bank Transfer"
+        android:textColor="@color/base_tabpager_indicator_color"
         android:onClick="onRadioButtonClicked"/>
 </RadioGroup>
