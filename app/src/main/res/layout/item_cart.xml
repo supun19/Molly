@@ -6,9 +6,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-   <CheckBox
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,43 +29,61 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/girll"
-            android:id="@+id/image_source"/>
+            android:id="@+id/image_source"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UK 10/Black"
-            android:id="@+id/specification"/>
-        <TextView
-            android:id="@+id/type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Black and White Long Top" />
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="women/tops" />
+            android:id="@+id/specification"
+            android:textSize="10dp"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Black and White Long Top"
+            android:textStyle="bold"
+            android:textSize="10dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="women/tops"
+            android:textSize="8dp"/>
     </LinearLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="20dp">
+        android:layout_marginRight="16dp"
+        android:gravity="right">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rs. 1890.00"
-            android:id="@+id/amount"/>
+            android:id="@+id/amount"
+            android:layout_marginTop="10dp"
+            />
 
 
-            <include layout="@layout/left_and_right_spinner"/>
+            <include layout="@layout/left_and_right_spinner"
+                />
 
 
 
@@ -69,7 +99,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="16dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +109,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Subtotal"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:textSize="10dp"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -87,7 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs. 1890.00"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:textSize="10dp"/>
 
 
         </LinearLayout>
@@ -99,7 +132,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Shipping"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:textSize="10dp"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -109,6 +143,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rs. 200.00"
                 android:gravity="right"
+                android:textSize="10dp"
                 />
 
 
@@ -116,12 +151,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -130,7 +168,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs. 2090.00"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:textSize="10dp"
+
+                android:textStyle="bold"/>
 
 
         </LinearLayout>

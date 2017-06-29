@@ -34,8 +34,8 @@ public class CartAdapter extends ArrayAdapter<Item> {
         TextView tvName = (TextView) convertView.findViewById(R.id.type);
         TextView tvHome = (TextView) convertView.findViewById(R.id.specification);
         // Populate the data into the template view using the data object
-        tvName.setText(item.getDescription());
-        tvHome.setText(item.getDescription());
+        tvName.setText("Black and White Long Top");
+        tvHome.setText("UK 10/Black");
         // Return the completed view to render on screen
         return convertView;
     }
