@@ -37,7 +37,7 @@ public class cartActivity extends AppCompatActivity {
 // Attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.cart_items);
         listView.setAdapter(adapter);
-        Item item = new Item(12.33, "Black & White Long Tops");
+        Item item = new Item(12.33, "Black & White Long Tops",false);
         adapter.add(item);
 
 
@@ -48,6 +48,7 @@ public class cartActivity extends AppCompatActivity {
                     buyItems();
             }
         });
+
 
 
     }

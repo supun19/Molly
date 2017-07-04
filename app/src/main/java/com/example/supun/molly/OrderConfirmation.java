@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.RadioButton;
 
@@ -41,10 +42,10 @@ public class OrderConfirmation extends AppCompatActivity {
         CartAdapter adapter = new CartAdapter(this, items);
 // Attach the adapter to a ListView
         ListView listView = (ListView) findViewById(R.id.order_cart_items);
-        listView.setAdapter(adapter);
-        Item item = new Item(12.33, "Black & White Long Tops");
-        adapter.add(item);
 
+        Item item = new Item(12.33, "Black & White Long Tops",true);
+        adapter.add(item);
+        listView.setAdapter(adapter);
         payNow = (Button) findViewById(R.id.button_pay_now);
 
         payNow.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,10 @@ public class OrderConfirmation extends AppCompatActivity {
                 payNow();
             }
         });
+
+
+        //CheckBox checkBox = (CheckBox) findViewById(R.id.boxCh);
+        //checkBox.setChecked(true);
     }
     private void payNow(){
 
@@ -61,7 +66,7 @@ public class OrderConfirmation extends AppCompatActivity {
             //null pointer check in case package name was not found
             QrModel model = new QrModel();
             model.setAmount("LKR2090.00");
-            model.setId("1549f642-3a50-49a0-8f57-31b2ab94841e");
+            model.setId("c3773a5d-7a57-401b-90db-22b4d6bd4473");
             model.setTag("main");
             model.setHaveCustomTypes(false);
             PaymentModel paymentModel = new PaymentModel();

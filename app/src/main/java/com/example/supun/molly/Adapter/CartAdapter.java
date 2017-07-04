@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.example.supun.molly.Model.Item;
@@ -33,9 +34,16 @@ public class CartAdapter extends ArrayAdapter<Item> {
         // Lookup view for data population
         TextView tvName = (TextView) convertView.findViewById(R.id.type);
         TextView tvHome = (TextView) convertView.findViewById(R.id.specification);
+        CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.boxCh);
         // Populate the data into the template view using the data object
         tvName.setText("Black and White Long Top");
         tvHome.setText("UK 10/Black");
+
+        if(item.isSelected()){
+            checkBox.setChecked(true);
+            checkBox.setVisibility(View.GONE);
+        }
+
         // Return the completed view to render on screen
         return convertView;
     }

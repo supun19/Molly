@@ -5,12 +5,14 @@ package com.example.supun.molly.Model;
  */
 
 public class Item {
+    private boolean selected;
     private double price;
     private String description;
 
-    public Item(double price, String description) {
+    public Item(double price, String description,boolean selected) {
         this.price = price;
         this.description = description;
+        this.selected=selected;
     }
 
     public double getPrice() {
@@ -27,5 +29,13 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }
